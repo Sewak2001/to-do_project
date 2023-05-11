@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title%}Login Form {% endblock title %}
+
+{% block content %}
+
+<body>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="container" style="width: 500px;">
+      <h1 style="text-align: center;"><b> <u> Login Page </u> </b></h1>
+
+      <div class="mb-3">
+
+        <label class="form-label">Username</label>
+        <input class="form-control" aria-describedby="emailHelp" name="user" placeholder="Enter Username">
+
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter Password">
+      </div>
+
+      <a href="signup">If not an account? </a><br>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+
+    </div>
+    </div>
+  </form>
+  {% for i in messages %}
+  {{i}}
+  {% endfor %}
+
+  {% endblock %}
+
+
+</body>

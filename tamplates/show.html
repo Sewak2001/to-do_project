@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title%} Show  {% endblock title %}
+
+{% block content%}
+
+</head>
+
+<body>
+    <table border="5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Created_on</th>
+                <th>Updated_on</th>
+                <th>Completed</th>
+                <th>User</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.created_on}}</td>
+                <td>{{i.updated_on}}</td>
+                <td>{{i.completed}}</td>
+                <td>{{i.user}}</td>
+                <td>
+                    <a href="{% url 'delete' i.id %}">delete</a>
+                </td>
+                <td>
+                    <a href="{% url 'update' i.id %}">update</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}
